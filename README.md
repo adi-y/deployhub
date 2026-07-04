@@ -131,7 +131,6 @@ App starts on `http://localhost:8080`.
 
 - Deployment workers with a queue (RabbitMQ)
 - Redis caching for build/deployment status
-- Kubernetes support for scaling containers
 - Custom domains + HTTPS certificates
 - CI/CD pipeline for DeployHub itself
 
