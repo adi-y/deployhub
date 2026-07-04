@@ -15,14 +15,14 @@ DeployHub recreates the core engine behind platforms like Vercel, Netlify, and R
 
 Most developers use deployment platforms without ever seeing what happens between `git push` and a live URL. Rather than consume that abstraction, DeployHub builds it — layer by layer: secure auth, project ownership, repo cloning, a build engine, containerization, and eventually live deployment URLs behind a reverse proxy.
 
-## Current Status — `v0.2`
+## Current Status — `v0.3`
 
 | Phase | Scope | Status |
 |---|---|---|
 | 1 | User authentication, JWT security, exception handling | ✅ Done |
 | 2 | Project management, ownership, entity mapping | ✅ Done |
-| 3 | Git repository cloning | 🚧 In progress |
-| 4 | Build engine (`npm install` / `npm run build`, logs) | ⏳ Planned |
+| 3 | Git repository cloning | ✅ Done |
+| 4 | Build engine (`npm install` / `npm run build`, logs) | 🚧 In progress |
 | 5 | Docker image build & container management | ⏳ Planned |
 | 6 | Live deployment URLs, reverse proxy, dashboard | ⏳ Planned |
 
@@ -38,6 +38,10 @@ Most developers use deployment platforms without ever seeing what happens betwee
 - Authenticated users create projects and attach a GitHub repo URL
 - Ownership is enforced server-side via `CurrentUserService`, so users only ever see their own projects
 
+**Git Repository Integration**
+- Clones the repository attached to a project onto the server via a system-level Git process
+- Cloned repo is scoped and stored per project, laying the groundwork for the build engine to run against real source code
+
 **Reliability**
 - Centralized exception handling (`EmailAlreadyExistsException`, `InvalidCredentialsException`, `UserNotFoundException`, etc.) for consistent, predictable API responses
 
@@ -50,7 +54,8 @@ Most developers use deployment platforms without ever seeing what happens betwee
 | Security | Spring Security, JWT (JJWT) |
 | Persistence | MySQL, Spring Data JPA / Hibernate |
 | Tooling | Maven, Lombok |
-| Upcoming | Docker, ProcessBuilder-based build engine |
+| Process Automation | Git CLI via `ProcessBuilder` |
+| Upcoming | Docker, build engine (`npm install` / `npm run build`) |
 
 ## Architecture
 
