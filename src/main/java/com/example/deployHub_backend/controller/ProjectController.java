@@ -32,4 +32,10 @@ public class ProjectController {
 
         return ResponseEntity.ok(response);
     }
+
+    @PostMapping("/{projectId}/clone")
+    public ResponseEntity<String> cloneProject(@PathVariable Long projectId){
+        projectService.cloneProject(projectId);
+        return ResponseEntity.ok("Repository cloned successfully");
+    }
 }

@@ -8,8 +8,10 @@ import com.example.deployHub_backend.entity.Users;
 import com.example.deployHub_backend.mapper.ProjectMapper;
 import com.example.deployHub_backend.repo.ProjectRepo;
 import com.example.deployHub_backend.service.CurrentUserDetailService;
+import com.example.deployHub_backend.service.GitService;
 import com.example.deployHub_backend.service.ProjectService;
 import lombok.RequiredArgsConstructor;
+
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,6 +24,7 @@ public class ProjectServiceImpl implements ProjectService {
     private final ProjectRepo projectRepo;
     private final CurrentUserDetailService currentUserService;
     private final ProjectMapper projectMapper;
+    private final GitService gitService;
 
     @Override
     public ProjectResponse  createProject(CreateProjectRequest request){
@@ -51,5 +54,17 @@ public class ProjectServiceImpl implements ProjectService {
                 .toList();
     }
 
+    @Override
+    public void cloneProject(Long projectId){
+        Users currentUser = currentUserService.getCurrentUser();
+
+        Project project = projectRepo.findById(projectId).orElseThrow(() -> new RuntimeException("Project not found"));
+
+        if(!project.getUser().getId().equals(currentUser.getId())){
+            throw new RuntimeException("Access denied");
+        }
+
+        gitService.cloneRepository(project);
+    }
 
 }

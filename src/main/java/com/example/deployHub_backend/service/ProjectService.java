@@ -10,5 +10,7 @@ public interface ProjectService {
 
     List<ProjectResponse> getMyProjects();
 
+    void cloneProject(Long projectId);
+
 
 }
