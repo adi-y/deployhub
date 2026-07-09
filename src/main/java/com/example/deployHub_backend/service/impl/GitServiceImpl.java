@@ -9,13 +9,14 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.nio.file.Path;
 
 @Service
 @RequiredArgsConstructor
 public class GitServiceImpl implements GitService {
 
     @Override
-    public void cloneRepository(Project project) {
+    public Path cloneRepository(Project project) {
 
         String destination = "deployhub_storage/repositories/" + project.getId();
 
@@ -75,5 +76,7 @@ public class GitServiceImpl implements GitService {
         } catch (IOException | InterruptedException e) {
             throw new RuntimeException(e);
         }
+
+        return Path.of(destination);
     }
 }

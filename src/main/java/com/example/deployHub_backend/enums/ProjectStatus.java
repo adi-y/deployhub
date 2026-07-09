@@ -1,4 +1,4 @@
-package com.example.deployHub_backend.entity;
+package com.example.deployHub_backend.enums;
 
 public enum ProjectStatus {
     CREATED,

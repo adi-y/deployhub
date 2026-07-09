@@ -1,6 +1,6 @@
 package com.example.deployHub_backend.dto.response;
 
-import com.example.deployHub_backend.entity.ProjectStatus;
+import com.example.deployHub_backend.enums.ProjectStatus;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;

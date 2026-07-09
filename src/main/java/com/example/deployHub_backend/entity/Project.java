@@ -1,5 +1,6 @@
 package com.example.deployHub_backend.entity;
 
+import com.example.deployHub_backend.enums.ProjectStatus;
 import jakarta.persistence.*;
 import lombok.*;
 

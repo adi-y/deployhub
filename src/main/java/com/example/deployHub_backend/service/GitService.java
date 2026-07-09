@@ -2,6 +2,8 @@ package com.example.deployHub_backend.service;
 
 import com.example.deployHub_backend.entity.Project;
 
+import java.nio.file.Path;
+
 public interface GitService {
-    void cloneRepository(Project project);
+    Path cloneRepository(Project project);
 }
