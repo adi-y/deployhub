@@ -1,6 +1,5 @@
 package com.example.deployHub_backend.security;
 
-import com.example.deployHub_backend.service.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

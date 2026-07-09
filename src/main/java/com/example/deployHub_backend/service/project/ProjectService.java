@@ -1,4 +1,4 @@
-package com.example.deployHub_backend.service;
+package com.example.deployHub_backend.service.project;
 
 import com.example.deployHub_backend.dto.request.CreateProjectRequest;
 import com.example.deployHub_backend.dto.response.ProjectResponse;
@@ -10,7 +10,7 @@ public interface ProjectService {
 
     List<ProjectResponse> getMyProjects();
 
-    void cloneProject(Long projectId);
+    ProjectResponse cloneProject(Long projectId);
 
 
 }

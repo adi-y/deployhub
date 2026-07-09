@@ -2,7 +2,7 @@ package com.example.deployHub_backend.controller;
 
 import com.example.deployHub_backend.dto.request.CreateProjectRequest;
 import com.example.deployHub_backend.dto.response.ProjectResponse;
-import com.example.deployHub_backend.service.ProjectService;
+import com.example.deployHub_backend.service.project.ProjectService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

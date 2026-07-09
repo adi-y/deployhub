@@ -3,7 +3,7 @@ package com.example.deployHub_backend.controller;
 import com.example.deployHub_backend.dto.request.LoginRequest;
 import com.example.deployHub_backend.dto.request.RegisterRequest;
 import com.example.deployHub_backend.dto.response.AuthResponse;
-import com.example.deployHub_backend.service.AuthService;
+import com.example.deployHub_backend.service.auth.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

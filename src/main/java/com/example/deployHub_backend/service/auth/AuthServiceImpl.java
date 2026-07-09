@@ -1,4 +1,4 @@
-package com.example.deployHub_backend.service.impl;
+package com.example.deployHub_backend.service.auth;
 
 import com.example.deployHub_backend.dto.request.LoginRequest;
 import com.example.deployHub_backend.dto.request.RegisterRequest;
@@ -8,7 +8,6 @@ import com.example.deployHub_backend.exception.EmailAlreadyExistsException;
 import com.example.deployHub_backend.exception.InvalidCredentialsException;
 import com.example.deployHub_backend.repo.UserRepo;
 import com.example.deployHub_backend.security.JwtService;
-import com.example.deployHub_backend.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;

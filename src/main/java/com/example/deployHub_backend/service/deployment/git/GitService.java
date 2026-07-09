@@ -1,4 +1,4 @@
-package com.example.deployHub_backend.service;
+package com.example.deployHub_backend.service.deployment.git;
 
 import com.example.deployHub_backend.entity.Project;
 

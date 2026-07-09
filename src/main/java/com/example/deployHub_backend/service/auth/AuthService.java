@@ -1,4 +1,4 @@
-package com.example.deployHub_backend.service;
+package com.example.deployHub_backend.service.auth;
 
 import com.example.deployHub_backend.dto.request.LoginRequest;
 import com.example.deployHub_backend.dto.request.RegisterRequest;

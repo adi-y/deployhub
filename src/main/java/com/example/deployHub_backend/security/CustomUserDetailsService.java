@@ -1,4 +1,4 @@
-package com.example.deployHub_backend.service;
+package com.example.deployHub_backend.security;
 
 import com.example.deployHub_backend.entity.Users;
 import com.example.deployHub_backend.repo.UserRepo;
