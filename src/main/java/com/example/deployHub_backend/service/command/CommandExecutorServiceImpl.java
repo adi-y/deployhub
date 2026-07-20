@@ -13,6 +13,11 @@ public class CommandExecutorServiceImpl implements CommandExecutorService {
 
     @Override
     public void execute(Path workingDirectory, List<String> command){
+        System.out.println("Running command:");
+        System.out.println(command);
+        System.out.println("Working Directory:");
+        System.out.println(workingDirectory.toAbsolutePath());
+
         ProcessBuilder processBuilder = new ProcessBuilder(command);
 
         processBuilder.directory(workingDirectory.toFile());

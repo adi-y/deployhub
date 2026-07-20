@@ -21,14 +21,30 @@ public class ReactBuildStrategy implements BuildStrategy {
 
     @Override
     public void build(Path projectPath){
-        commandExecutorService.execute(
-                projectPath,
-                List.of("npm", "install")
-        );
+
+        System.out.println("========== ReactBuildStrategy ==========");
+        System.out.println("Project Path: " + projectPath.toAbsolutePath());
+        System.out.println("package.json exists: " + Files.exists(projectPath.resolve("package.json")));
+
+        System.out.println("Cloned Repository:");
+        System.out.println(projectPath.toAbsolutePath());
+
 
         commandExecutorService.execute(
                 projectPath,
-                List.of("npm","run","build")
+                List.of("npm.cmd", "install")
+
         );
+
+
+        commandExecutorService.execute(
+                projectPath,
+                List.of("npm.cmd","run","build")
+        );
+
+
+
+
     }
+
 }
